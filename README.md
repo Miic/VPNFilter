@@ -1,5 +1,5 @@
 # VPNFilter
-A PHP-based project to filter out VPNs a Webpage using an API
+A PHP-based project to filter out VPNs from a Webpage using an API
 
 
 PHP code that can be appeneded to any php page to redirect or block any user detected to be using a known VPN.
