@@ -69,7 +69,7 @@ $apikey = "";
 $json = getJson('http://tools.xioax.com/networking/v2/json/' . $_SERVER['REMOTE_ADDR'] . '/' . $apikey);
 $data = json_decode($json,true);
 if ($data['host-ip'] == true && botDetected() == false) {
-        header("Location: https://elyssiamc.com/vpn.php");
+        header("Location: exampleRedirect.php");
         die();
 }
 ?>
