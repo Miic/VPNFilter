@@ -2,6 +2,7 @@
 
 #Removed appending PHP code for demo for security.
 
+#This is all html so echo everything to make it work in a php file.
 echo "<!DOCTYPE HTML>\n"; 
 echo "<!--\n"; 
 echo "        Massively by HTML5 UP\n"; 
