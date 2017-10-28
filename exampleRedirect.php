@@ -10,7 +10,7 @@ echo "        Free for personal and commercial use under the CCA 3.0 license (ht
 echo "-->\n"; 
 echo "<html>\n"; 
 echo "        <head>\n"; 
-echo "                <title>ElyssiaMC - VPN Detected!</title>\n"; 
+echo "                <title>VPN Detected!</title>\n"; 
 echo "                <meta charset=\"utf-8\" />\n"; 
 echo "                <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" />\n"; 
 echo "                <link rel=\"stylesheet\" href=\"assets/css/main.css\" />\n"; 
