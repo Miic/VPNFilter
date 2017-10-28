@@ -6,4 +6,6 @@ PHP code that can be appeneded to any php page to redirect or block any user det
 
 Note: API Keys are not included in this. To recieve an api key, purchase an API key from http://xioax.com/
 
-This code is also capable of pushing notifications to a Slack server. Simply use a Slack webhook and replace the line in the code.
+
+This code include various features such as in-built caching and notification to Slack.
+Simply use a Slack webhook and replace the line in the code to enable Slack notifications.
