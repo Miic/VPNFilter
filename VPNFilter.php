@@ -71,5 +71,8 @@ $data = json_decode($json,true);
 if ($data['host-ip'] == true && botDetected() == false) {
         header("Location: exampleRedirect.php");
         die();
+} else {
+        header("Location: http://example.com/");
+        die();
 }
 ?>
