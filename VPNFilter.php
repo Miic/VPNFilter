@@ -1,9 +1,17 @@
 <?php
-
 require __DIR__ . '/vendor/autoload.php';
 function getJson($url) {
+    
+    #Options
     $cacheFile = '/var/www/html/cache/' . md5($url) . '.json';
-
+    $apikey = "xioax api key";
+    $redirect = "exampleRedirect.html";
+    
+    $slackwebhook = "SLACK CLIENT HOOK URL";
+    $channel = "#vpn-attempts";
+    
+    
+    #Begin
     if (file_exists($cacheFile)) {
         $fh = fopen($cacheFile, 'r');
         $cacheTime = trim(fgets($fh));
@@ -20,10 +28,10 @@ function getJson($url) {
     $data = json_decode($json,true);
     if ($data['host-ip'] == true) {
         $settings = [
-                'channel' => '#vpn-attempts',
+                'channel' => $channel,
                 'allow_markdown' => true
         ];
-        $client = new Maknz\Slack\Client('SLACK CLIENT HOOK', $settings);
+        $client = new Maknz\Slack\Client($slackwebhook, $settings);
         $org =  $data['org'];
         if ($org == '') {
                 $org = 'Unknown';
@@ -37,6 +45,7 @@ function getJson($url) {
     fclose($fh);
     return $json;
 }
+
 function getUserIP()
 {
     $client  = @$_SERVER['HTTP_CLIENT_IP'];
@@ -65,14 +74,13 @@ function botDetected()
     && preg_match('/bot|crawl|slurp|spider|mediapartners/i', $_SERVER['HTTP_USER_AGENT'])
   );
 }
-$apikey = "";
+
+
 $json = getJson('http://tools.xioax.com/networking/v2/json/' . $_SERVER['REMOTE_ADDR'] . '/' . $apikey);
 $data = json_decode($json,true);
-if ($data['host-ip'] == true && botDetected() == false) {
-        header("Location: exampleRedirect.php");
-        die();
-} else {
-        header("Location: http://example.com/");
+if ($data['host-ip'] == true && botDetected() == false) 
+{
+        header("Location: " . $redirect);
         die();
 }
 ?>
