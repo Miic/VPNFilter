@@ -4,6 +4,8 @@ A PHP-based project to filter out VPNs from a Webpage using an API
 
 PHP code that can be appeneded to any php page to redirect or block any user detected to be using a known VPN.
 
+Please Note: You must run the PHP script BEFORE loading anything else for the end-user for this system to work.
+
 Note: API Keys are not included in this. While the first 500 checks with this API are free, I recommend purchasing an API from the host if you plan to use this for long term use. To recieve an api key, purchase an API key from http://xioax.com/
 
 
